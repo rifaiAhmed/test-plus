@@ -5,4 +5,5 @@ const (
 	ErrFailedBadRequest = "data tidak sesuai"
 	ErrServerError      = "terjadi kesalahan pada server"
 	ErNotFound          = "Data not found"
+	ErrCreate           = "Gagal membuat transalsi"
 )

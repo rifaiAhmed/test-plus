@@ -82,8 +82,8 @@ func TestTransactionAPI_Create(t *testing.T) {
 			mockFn: func() {
 				mockService.EXPECT().CreateTransaction(gomock.Any(), gomock.Any()).Return(nil, assert.AnError)
 			},
-			wantStatus: http.StatusInternalServerError,
-			wantBody:   constants.ErrServerError,
+			wantStatus: http.StatusBadRequest,
+			wantBody:   constants.ErrCreate,
 		},
 	}
 	for _, tt := range tests {
