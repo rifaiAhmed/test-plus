@@ -28,7 +28,7 @@ func (api *TransactionAPI) Create(c *gin.Context) {
 	data, err := api.TransactionService.CreateTransaction(c, &req)
 	if err != nil {
 		log.Error("failed to create Transaction: ", err)
-		helpers.SendResponseHTTP(c, http.StatusInternalServerError, constants.ErrServerError, nil)
+		helpers.SendResponseHTTP(c, http.StatusBadRequest, constants.ErrCreate, nil)
 		return
 	}
 
